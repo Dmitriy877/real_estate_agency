@@ -1,5 +1,7 @@
 Django==2.2.24
 environs==5.2.1
 dj-database-url==0.5.0
-setuptools=80.0.0
-arshmallow==3.20.1
+setuptools==80.0.0
+marshmallow==3.20.1
+django-phonenumber-field==2.2.0
+phonenumbers==9.0.4
