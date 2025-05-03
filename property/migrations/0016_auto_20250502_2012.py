@@ -19,12 +19,15 @@ def get_correct_phone_number(phone_number):
     if not phone_number:
         return None
 
-    number_info = phonenumbers.parse(phone_number, "RU")
-    normal_number = phonenumbers.format_number(number_info, phonenumbers.PhoneNumberFormat.E164)
-
     try:
-        phonenumbers.is_valid_number(normal_number)
-        return normal_number
+        number_info = phonenumbers.parse(phone_number, "RU")
+        normal_number = phonenumbers.format_number(number_info, phonenumbers.PhoneNumberFormat.E164)
+
+        if phonenumbers.is_valid_number(number_info):
+            return normal_number
+        else:
+            return None
+
     except Exception:
         return None
 
