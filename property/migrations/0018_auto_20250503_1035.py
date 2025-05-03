@@ -14,7 +14,6 @@ def move_data_to_owner(apps, schema_editor):
         owner_name = flat.owner
         owners_phonenumber = flat.owners_phonenumber
         owner_pure_phone = get_correct_phone_number(owners_phonenumber)
-        print(owner_pure_phone)
         owner = Owner.objects.get_or_create(
             owner=owner_name,
             owners_phonenumber=owners_phonenumber,

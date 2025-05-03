@@ -3,7 +3,13 @@ from django.contrib import admin
 from .models import Flat, Complain, Owner
 
 
+class OwnerInstanceInline(admin.StackedInline):
+    model = Owner.flat_property.through
+    raw_id_fields = ["owner"]
+
+
 class FlatAdmin(admin.ModelAdmin):
+    inlines = [OwnerInstanceInline]
     search_fields = ["town", "town_district", "address"]
     readonly_fields = ["created_at"]
     list_display = (
