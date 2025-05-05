@@ -8,7 +8,7 @@ def move_data_to_owner(apps, schema_editor):
     Flat = apps.get_model("property", 'Flat')
     Owner = apps.get_model('property', 'Owner')
 
-    flats = Flat.objects.all()
+    flats = Flat.objects.all().iterator()
 
     for flat in flats:
         owner_name = flat.owner

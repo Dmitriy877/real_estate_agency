@@ -6,7 +6,7 @@ import phonenumbers
 
 def change_phone_number(apps, schema_editor):
     Flat = apps.get_model("property", "Flat")
-    flats = Flat.objects.all()
+    flats = Flat.objects.all().iterator()
 
     for flat in flats:
         phone_number = flat.owners_phonenumber
