@@ -82,10 +82,6 @@ class Owner(models.Model):
         verbose_name="ФИО владельца",
         max_length=200,
         db_index=True)
-    owners_phonenumber = models.CharField(
-        "Номер владельца",
-        max_length=20,
-        db_index=True)
     owner_pure_phone = PhoneNumberField(
         null=True,
         blank=True,
