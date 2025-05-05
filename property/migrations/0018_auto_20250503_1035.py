@@ -19,7 +19,7 @@ def move_data_to_owner(apps, schema_editor):
             owners_phonenumber=owners_phonenumber,
             owner_pure_phone=owner_pure_phone
         )
-        owner[0].flat_property.set([flat])
+        owner[0].flat_property.add(flat)
 
 
 def get_correct_phone_number(phone_number):
